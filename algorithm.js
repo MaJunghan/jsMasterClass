@@ -1,6 +1,15 @@
-function charCount(string) {
-  const data = string.length;
-  console.log(data);
-  return { a: data };
+function charCount(str) {
+  let result = {};
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i].toLowerCase();
+    if (result[char] > 0) {
+      result[char]++;
+    } else {
+      result[char] = 1;
+    }
+  }
+  console.log(result);
+  return result;
 }
-charCount("aaaa");
+charCount("Hello Word");
