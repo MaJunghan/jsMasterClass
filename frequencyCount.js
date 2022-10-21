@@ -48,4 +48,4 @@ console.log(same([1, 2, 3, 3], [9, 9, 1, 4]));
 // 저렇게 하면 2천번만 연산하면됨 => 효율적
 // 객체로 key와 value 둘다 확인해야함.
 
-// rn android naver login pod update
+// rn android naver login 성공, sdk초기화남음
