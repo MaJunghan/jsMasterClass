@@ -23,4 +23,4 @@ function validAnagram(first, second) {
 
 // console.log(validAnagram("angrams", "nagaramm"));
 // console.log(validAnagram("texttwisttime", "timetwisttext")); // true
-console.log(validAnagram("qwerty", "qeywrt")); // true
+// console.log(validAnagram("qwerty", "qeywrt")); // true
