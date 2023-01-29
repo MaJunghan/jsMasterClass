@@ -14,4 +14,6 @@ function maxSubArraySum(arr, num) {
   return maxSum;
 }
 
+// rn - 회원가입 타이머 구현
+// 1
 console.log(maxSubArraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3));
