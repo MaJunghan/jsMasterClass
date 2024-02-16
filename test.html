@@ -5,24 +5,14 @@
   </head>
   <body>
     <script>
-      function sumZero(arr) {
-        let left = 0;
-        let right = arr.length - 1;
-
-        while (left < right) {
-          let sum = arr[left] + arr[right];
-
-          if (sum == 0) {
-            return [arr[left], arr[right]];
-          } else if (sum > 0) {
-            right--;
-          } else {
-            left++;
-          }
+      function countUniqueValues(arr) {
+        const test = new Set();
+        for (let i = 0; i < arr.length; i++) {
+          test.add(arr[i]);
         }
+        return test.size;
       }
-
-      console.log(sumZero([-4, -3, -2, -1, 0, 5, 10]));
+      countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]);
     </script>
   </body>
 </html>
