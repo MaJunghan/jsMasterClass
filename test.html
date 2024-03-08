@@ -5,26 +5,34 @@
   </head>
   <body>
     <script>
-      function search(array, val) {
-        let min = 0;
-        let max = array.length - 1;
+      function sameFrequency(num1, num2) {
+        const arr1 = String(num1).split('');
+        const arr2 = String(num2).split('');
 
-        while (min <= max) {
-          let middle = Math.floor((min + max) / 2);
-          let currentElement = array[middle];
+        if (arr1.length !== arr2.length) {
+          return false;
+        }
+        const frequencyCounter1 = {};
+        const frequencyCounter2 = {};
+        for (let x of arr1) {
+          frequencyCounter1[x] = frequencyCounter1[x] + 1 || 1;
+        }
+        for (let x of arr2) {
+          frequencyCounter2[x] = frequencyCounter2[x] + 1 || 1;
+        }
 
-          if (currentElement < val) {
-            min = middle + 1;
-          } else if (currentElement > val) {
-            max = middle - 1;
-          } else {
-            return middle;
+        for (let key in frequencyCounter1) {
+          if (!(key in frequencyCounter2)) {
+            return false;
+          }
+          if (frequencyCounter2[key] !== frequencyCounter1[key]) {
+            return false;
           }
         }
-        return -1;
+        return true;
       }
 
-      search([1, 2, 3, 5, 6, 8, 9, 12, 15, 16, 29], 15);
+      console.log(sameFrequency(182, 281));
     </script>
   </body>
 </html>
