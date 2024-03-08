@@ -13,6 +13,7 @@ function averagePair(arr, average) {
       left++;
     }
   }
+  return false;
 }
 
 averagePair([1, 2, 3], 2.5);
