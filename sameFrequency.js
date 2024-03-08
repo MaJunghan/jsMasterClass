@@ -1,28 +1,22 @@
 function sameFrequency(num1, num2) {
-  const arr1 = String(num1).split('');
-  const arr2 = String(num2).split('');
+  let strNum1 = num1.toString();
+  let strNum2 = num2.toString();
+  if (strNum1.length !== strNum2.length) return false;
 
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  const frequencyCounter1 = {};
-  const frequencyCounter2 = {};
-  for (let x of arr1) {
-    frequencyCounter1[x] = frequencyCounter1[x] + 1 || 1;
-  }
-  for (let x of arr2) {
-    frequencyCounter2[x] = frequencyCounter2[x] + 1 || 1;
+  let countNum1 = {};
+  let countNum2 = {};
+
+  for (let i = 0; i < strNum1.length; i++) {
+    countNum1[strNum1[i]] = (countNum1[strNum1[i]] || 0) + 1;
   }
 
-  for (let key in frequencyCounter1) {
-    if (!(key in frequencyCounter2)) {
-      return false;
-    }
-    if (frequencyCounter2[key] !== frequencyCounter1[key]) {
-      return false;
-    }
+  for (let j = 0; j < strNum1.length; j++) {
+    countNum2[strNum2[j]] = (countNum2[strNum2[j]] || 0) + 1;
   }
+
+  for (let key in countNum1) {
+    if (countNum1[key] !== countNum2[key]) return false;
+  }
+
   return true;
 }
-
-sameFrequency(182, 281);
