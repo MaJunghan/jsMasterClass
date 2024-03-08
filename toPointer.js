@@ -15,6 +15,6 @@ function sumZero(arr) {
   }
 }
 
-// 구간합보다 크면 오른쪽 --  구간합보다 작으면 왼쪽 ++
+// 구간합보다이 0보다 작으면 left ++ , 0보다 크면 right --
 
 console.log(sumZero([-4, -3, -2, -1, 0, 5, 10]));

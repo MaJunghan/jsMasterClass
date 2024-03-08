@@ -5,20 +5,25 @@
   </head>
   <body>
     <script>
-      function areThereDuplicates(...args) {
-        const frequencyCounter1 = {};
-        for (let x of args) {
-          frequencyCounter1[x] = frequencyCounter1[x] + 1 || 1;
-        }
-        for (let key in frequencyCounter1) {
-          if (frequencyCounter1[key] > 1) {
+      function averagePair(arr, average) {
+        let left = 0;
+        let right = arr.length - 1;
+
+        while (left < right) {
+          let sum = arr[left] + arr[right] / 2;
+
+          if (sum === average) {
             return true;
+          } else if (sum > average) {
+            right--;
+          } else {
+            left++;
           }
         }
         return false;
       }
 
-      console.log(areThereDuplicates('a', 'b', 'c', 'a')); // false
+      console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1));
     </script>
   </body>
 </html>
