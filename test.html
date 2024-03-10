@@ -5,21 +5,23 @@
   </head>
   <body>
     <script>
-      function isSubsequence(str1, str2) {
-        let left = 0;
-        let right = 0;
-
-        while (left < str1.length && right < str2.length) {
-          if (str1.charAt(left) === str2.charAt(right)) {
-            left++;
-          } else {
-            right++;
-          }
-          if (left === str1.length) return true;
+      function maxSubarraySum(arr, num) {
+        if (arr.length < num) return null;
+        let maxSum = 0;
+        let tempSum = 0;
+        for (let i = 0; i < num; i++) {
+          maxSum += arr[i];
         }
-        return false;
+        tempSum = maxSum;
+        for (let i = num; i < arr.length; i++) {
+          tempSum = tempSum - arr[i - num] + arr[i];
+          maxSum = Math.max(maxSum, tempSum);
+        }
+
+        return maxSum;
       }
-      console.log(isSubsequence('abc', 'acb'));
+
+      console.log(maxSubarraySum([100, 200, 300, 400], 2));
     </script>
   </body>
 </html>
