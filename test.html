@@ -5,23 +5,28 @@
   </head>
   <body>
     <script>
-      function maxSubarraySum(arr, num) {
-        if (arr.length < num) return null;
-        let maxSum = 0;
-        let tempSum = 0;
-        for (let i = 0; i < num; i++) {
-          maxSum += arr[i];
+      function minSubArrayLen(arr, num) {
+        // n개일때 num와 크기 비교
+        let total = 0;
+        let start = 0;
+        let end = 0;
+        let minlen = Infinity;
+        while (start < arr.length) {
+          if (total < num && end < arr.length) {
+            total += arr[end];
+            end++;
+          } else if (total >= num) {
+            minlen = Math.min(minlen, end - start);
+            total -= arr[start];
+            start++;
+          } else {
+            break;
+          }
         }
-        tempSum = maxSum;
-        for (let i = num; i < arr.length; i++) {
-          tempSum = tempSum - arr[i - num] + arr[i];
-          maxSum = Math.max(maxSum, tempSum);
-        }
-
-        return maxSum;
+        return minlen === Infinity ? 0 : minlen;
       }
 
-      console.log(maxSubarraySum([100, 200, 300, 400], 2));
+      console.log(minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 39));
     </script>
   </body>
 </html>

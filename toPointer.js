@@ -13,6 +13,7 @@ function sumZero(arr) {
       left++;
     }
   }
+  return 0;
 }
 
 // 구간합보다이 0보다 작으면 left ++ , 0보다 크면 right --
