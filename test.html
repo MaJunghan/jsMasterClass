@@ -5,25 +5,21 @@
   </head>
   <body>
     <script>
-      function averagePair(arr, average) {
+      function isSubsequence(str1, str2) {
         let left = 0;
-        let right = arr.length - 1;
+        let right = 0;
 
-        while (left < right) {
-          let sum = arr[left] + arr[right] / 2;
-
-          if (sum === average) {
-            return true;
-          } else if (sum > average) {
-            right--;
-          } else {
+        while (left < str1.length && right < str2.length) {
+          if (str1.charAt(left) === str2.charAt(right)) {
             left++;
+          } else {
+            right++;
           }
+          if (left === str1.length) return true;
         }
         return false;
       }
-
-      console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1));
+      console.log(isSubsequence('abc', 'acb'));
     </script>
   </body>
 </html>
