@@ -19,3 +19,9 @@ function wakeUp() {
 }
 
 wakeUp();
+
+// wakeUp 함수 호출 콜스택에 쌓임
+// takeShower 콜스택에 쌓이고 리턴되어 콜스택제거
+// eatBreakfast 콜스택에 쌓이고 cookFood 콜스택에 쌓이고 콜스택 제거 제거
+// console.log
+// wakeUp 함수 종료
