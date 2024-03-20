@@ -17,6 +17,5 @@ function collectOddValues(arr) {
     helper(helperInput.slice(1));
   }
   helper(arr);
-  return result;
 }
 console.log(collectOddValues([1, 2, 3, 4, 5]));
