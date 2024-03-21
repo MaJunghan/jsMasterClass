@@ -17,3 +17,10 @@ function recursiveRange(num) {
   return result;
 }
 console.log(recursiveRange(10));
+
+// function productOfArray(arr) {
+//   if(arr.length === 0) {
+//       return 1;
+//   }
+//   return arr[0] * productOfArray(arr.slice(1));
+// }
