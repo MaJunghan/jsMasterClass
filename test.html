@@ -5,23 +5,12 @@
   </head>
   <body>
     <script>
-      function recursiveRange(num) {
-        let result = 0;
-
-        function helper(num) {
-          // 아래 if절은 종료조건 즉, 중단점
-          if (num < 1) {
-            return result;
-          }
-
-          result += num;
-          num--;
-          helper(num);
-        }
-        helper(num);
-        return result;
+      function fib(n) {
+        if (n <= 2) return 1;
+        return fib(n - 1) + fib(n - 2);
       }
-      console.log(recursiveRange(10));
+
+      console.log(fib(10));
     </script>
   </body>
 </html>
