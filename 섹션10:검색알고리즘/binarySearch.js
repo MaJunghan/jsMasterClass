@@ -1,8 +1,16 @@
 // 이진탐색 주의점 : 숫자나 알파벳이 정렬되어 있어야한다.
+// O(log n)
 
-function binarySearch(arr, num) {
-  let midle = Math.floor(arr.length / 2);
-  console.log(midle);
+function binarySearch(arr, elem) {
+  var start = 0;
+  var end = arr.length - 1;
+  var middle = Math.floor((start + end) / 2);
+  while (arr[middle] !== elem && start <= end) {
+    if (elem < arr[middle]) end = middle - 1;
+    else start = middle + 1;
+    middle = Math.floor((start + end) / 2);
+  }
+  return arr[middle] === elem ? middle : -1;
 }
 
 console.log(
