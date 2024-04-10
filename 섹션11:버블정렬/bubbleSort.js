@@ -18,4 +18,4 @@ function bubbleSort(arr) {
   }
   return arr;
 }
-console.log(bubbleSort([29, 37, 45, 8]));
+console.log(bubbleSort([37, 45, 29, 8]));
